@@ -61,3 +61,50 @@ User -> Controller -> Service -> Data -> Service -> Controller -> View (RENDER) 
 - In charge of defining the structure of domain objects
 - This is the layer that knows about persistence. Only this knows why/how to persist the object
 - In charge of abstracting persistence logic by creating a lean and general interface
+
+
+## Testing
+
+A rule of thumb split
+
+85% should be unit tests
+10% should be integration tests
+5% should be functional tests
+
+testing all subfiles: 
+
+`go test ./...`
+
+with coverage
+
+`go test -cover ./...`
+
+with coverage file:
+
+`go test -coverprofile cover.out ./...`
+
+To converage into an actual html output:
+
+`go tool cover -html=cover.out -o cover.out`
+
+To view all flags
+
+`go help testflag`
+
+Go does not have asserts by design, so that a test can fail in multiple places. But some libraries do provide them.
+
+#### Benchmarks
+
+Methods must be starting with `Benchmark`
+
+```go
+func BenchmarkSomething(b *testing.B){
+
+  //code.
+}
+```
+
+to run:
+
+`go test -bench .`
+
