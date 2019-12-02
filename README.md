@@ -75,6 +75,10 @@ testing all subfiles:
 
 `go test ./...`
 
+verbose (output logs):
+
+`go test -v ./...`
+
 with coverage
 
 `go test -cover ./...`
@@ -107,4 +111,6 @@ func BenchmarkSomething(b *testing.B){
 to run:
 
 `go test -bench .`
+
+
 
