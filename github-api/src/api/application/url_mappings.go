@@ -8,5 +8,6 @@ import (
 func mapUrls() {
 	//for google cloud/AWS
 	router.GET("/marco", polo.Polo)
-	router.POST("/repositories", repositories.CreateRepo)
+	router.POST("/repository", repositories.CreateRepo)
+	router.POST("/repositories", repositories.CreateRepos)
 }

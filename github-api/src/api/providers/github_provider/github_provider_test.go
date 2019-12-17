@@ -136,7 +136,7 @@ func TestCreateRepoErrorInvalidResponseInterface(t *testing.T) {
 	assert.Nil(t, response)
 	assert.NotNil(t, err)
 	assert.EqualValues(t, http.StatusInternalServerError, err.StatusCode)
-	assert.EqualValues(t, "error trying to inmarshal create repo successful response", err.Message)
+	assert.EqualValues(t, "error trying to unmarshal create repo successful response", err.Message)
 
 }
 

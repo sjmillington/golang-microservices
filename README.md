@@ -113,4 +113,33 @@ to run:
 `go test -bench .`
 
 
+## Concurrency
+
+IS **NOT** parallelism.
+
+Concurrency is sharing resources and synchronizing over them, and will work even with 1 core.
+
+Concurrency:
+- Composition of processes running independently
+- It's all about the structure of the solution
+
+Parallelism:
+- Simultaneous execution of processes (that may or may not be related)
+- It all about the execution of the solution.
+
+A concurrent solution may execute it's parts in parallel - if there is more than one processor.
+
+A bad concurrent model will lead to blocking and no performance gain - or even performance loss.
+
+**In GO, we need to test and benchmark different concurrent models to find the best one**
+
+### Channels
+
+Used to sync and communicate different go routines
+
+channels ALWAYS have a type.
+
+go routines should **only** communicate using channels
+
+Buffer channels have a set number of slots to hold items. (Like a blocking queue) Buffered channels are not blocked until capcity is met
 

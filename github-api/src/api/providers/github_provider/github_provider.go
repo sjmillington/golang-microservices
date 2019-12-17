@@ -65,7 +65,7 @@ func CreateRepo(accessToken string, request github.CreateRepoRequest) (*github.C
 		log.Println(fmt.Sprintf("error trying to unmarshall create repo successful response %s", err.Error()))
 		return nil, &github.GithubErrorResponse{
 			StatusCode: http.StatusInternalServerError,
-			Message:    "error trying to inmarshal create repo successful response",
+			Message:    "error trying to unmarshal create repo successful response",
 		}
 	}
 
